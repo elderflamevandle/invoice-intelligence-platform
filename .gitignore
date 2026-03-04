@@ -1,5 +1,58 @@
-.ipynb_checkpoints/
+# ==============================
+# Python
+# ==============================
 __pycache__/
-data/
-.DS_Store/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ==============================
+# Virtual environments
+# ==============================
+.venv/
+venv/
+env/
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# OS files
+# ==============================
+.DS_Store
 */.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# Jupyter Notebooks
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# Logs (generated at runtime)
+# ==============================
+logs/
+
+# ==============================
+# Data (too large for GitHub)
+# ==============================
+data/
+
+# ==============================
+# Poetry (lock file is fine to push)
+# ==============================
+# poetry.lock  <-- We KEEP this in Git for reproducible builds
+
+# ==============================
+# Docker (runtime artifacts)
+# ==============================
+docker-compose.override.yml
