@@ -1,0 +1,10 @@
+2026-03-03 23:15:22,491 - __main__ - INFO - Starting API Server on 0.0.0.0:8000
+2026-03-03 23:34:47,690 - __main__ - INFO - Starting API Server on 0.0.0.0:8000
+2026-03-03 23:37:10,059 - __main__ - INFO - Starting API Server on 0.0.0.0:8000
+2026-03-03 23:37:59,420 - __main__ - INFO - Received anomaly risk prediction check for PO quantity: 162.0
+2026-03-03 23:37:59,425 - inference.predict_invoice_flag - INFO - Loading anomaly model from /app/models/predict_flag_invoice.pkl and scaler from /app/models/scaler.pkl
+2026-03-03 23:38:28,109 - __main__ - INFO - Received freight prediction request for Dollars: 18400.0
+2026-03-03 23:38:28,111 - inference.predict_freight - INFO - Loading freight prediction model from: /app/models/predict_freight_model.pkl
+2026-03-03 23:38:50,578 - __main__ - INFO - Received anomaly risk prediction check for PO quantity: 90009.0
+2026-03-03 23:38:50,579 - inference.predict_invoice_flag - INFO - Loading anomaly model from /app/models/predict_flag_invoice.pkl and scaler from /app/models/scaler.pkl
+2026-03-03 23:43:25,904 - __main__ - INFO - Starting API Server on 0.0.0.0:8000

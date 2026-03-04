@@ -1,0 +1,29 @@
+[project]
+name = "inventory-invoice-analytics"
+version = "0.1.0"
+description = "This project implements end-to-end machine learning system designed to support finance team by 1) predicting expected frieght cost and 2) by flagging high-risk invoices."
+authors = [
+    {name = "elderflamevandle",email = "chaitanyabagul07@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.135.1,<0.136.0)",
+    "uvicorn (>=0.41.0,<0.42.0)",
+    "pandas (<3.0)",
+    "numpy (>=2.4.2,<3.0.0)",
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "joblib (>=1.5.3,<2.0.0)",
+    "streamlit (>=1.54.0,<2.0.0)",
+    "plotly (>=6.6.0,<7.0.0)",
+    "pydantic (>=2.12.5,<3.0.0)",
+    "xgboost (>=3.2.0,<4.0.0)",
+    "lightgbm (>=4.6.0,<5.0.0)",
+    "catboost (>=1.2.10,<2.0.0)",
+    "requests (>=2.32.5,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

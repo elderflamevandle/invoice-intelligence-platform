@@ -1,0 +1,26 @@
+# 1. Start with a lightweight version of Python 3.12
+FROM python:3.12-slim
+
+# 2. Tell Docker to do all its future work inside a folder called /app
+WORKDIR /app
+
+# 3. Install Poetry inside the Docker container
+RUN pip install poetry==2.0.1
+
+# 4. Copy ONLY the recipe books first
+COPY pyproject.toml poetry.lock /app/
+
+# 5. Tell Poetry NOT to make a magic .venv box. 
+# Because Streamlit doesn't need heavy ML libraries like Scikit-Learn (since the API handles that), 
+# we could technically install less here, but for simplicity we install the whole locked environment.
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi --no-root --only main
+
+# 6. Now copy all of the actual Python code into the container
+COPY . /app
+
+# 7. Expose Port 8501 so the outside world can view the Streamlit website
+EXPOSE 8501
+
+# 8. Tell the container what command to run when it starts up
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]

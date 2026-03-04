@@ -1,0 +1,32 @@
+services:
+  # ==========================================
+  # 1. THE BACKEND API (FastAPI)
+  # ==========================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: invoice_intelligence_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # This maps your local logs folder to the container's logs folder so you can read them
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+  # ==========================================
+  # 2. THE FRONTEND UI (Streamlit)
+  # ==========================================
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: invoice_intelligence_ui
+    ports:
+      - "8501:8501"
+    environment:
+      # We tell Streamlit to send its requests to the "api" container, not "localhost"
+      - API_URL=http://api:8000
+    depends_on:
+      - api
+    restart: unless-stopped

@@ -1,0 +1,26 @@
+# 1. Start with a lightweight version of Python 3.12 (the version we specified in pyproject.toml)
+FROM python:3.12-slim
+
+# 2. Tell Docker to do all its future work inside a folder called /app
+WORKDIR /app
+
+# 3. Install Poetry inside the Docker container so it can read our recipe books
+RUN pip install poetry==2.0.1
+
+# 4. Copy ONLY the recipe books first. 
+# (If we change our code later, Docker won't have to re-download all PIP packages!)
+COPY pyproject.toml poetry.lock /app/
+
+# 5. Tell Poetry NOT to make a magic .venv box inside the container.
+# The Docker container *is* the magic box, so we just install everything directly!
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi --no-root --only main
+
+# 6. Now copy all of the actual Python code (models, scripts, db) into the container
+COPY . /app
+
+# 7. Expose Port 8000 so the outside world can talk to the FastAPI server
+EXPOSE 8000
+
+# 8. Tell the container what command to run when it starts up
+CMD ["python", "fastapi_app.py"]
