@@ -221,11 +221,7 @@ kubectl apply -f kubernetes.yaml
 ---
 <h2><a class="anchor" id="author--contact"></a>Author & Contact</h2>
 
-**Ayushi Mishra**  
+**Chaitanya Bagul**  
 Data Scientist  
-📧 Email: techclasses0810@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/ayushi-mishra-30813b174/)  
-🔗 [Portfolio](https://www.youtube.com/@techclasses0810/)
-
-
-
+📧 Email: chaitanyabagul07@gmail.com 
+🔗 [LinkedIn](https://www.linkedin.com/in/chaitanya-bagul-4462a2169/)
